@@ -1,66 +1,73 @@
-# KEGG Overlap Package
-This package performs KEGG pathway overlap analysis, converting the logic from `kegg_overlap.ipynb` into a reusable Python module.
+# KEGG Overlap
+
+![Python](https://img.shields.io/badge/python-3.6%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+**KEGG Overlap** is a Python package for analyzing pathway overlaps using data from the KEGG database. It automates the retrieval of pathway and gene information, computes the "crosstalk" (gene overlap) between pathways, and ranks genes based on their pathway connectivity.
+
+This tool is designed for bioinformaticians and researchers who need to programmatically explore the relationships between biological pathways.
 
 ## Installation
 
-### Option 1: Install from GitHub (Recommended for others)
-You can install the package directly from GitHub without downloading the files manually:
+You can install `kegg_overlap` directly from GitHub using `pip`.
+
+### Option 1: Install from GitHub (Recommended)
+To install the latest version of the package:
+
 ```bash
 pip install git+https://github.com/GSYH/kegg_overlap.git
 ```
 
-### Option 2: Install Locally (For development)
-If you have downloaded the source code, you can install it in editable mode:
+### Option 2: Install Locally (For Development)
+If you are developing or modifying the package, clone the repository and install in editable mode:
+
 ```bash
-cd kegg_package
+git clone https://github.com/GSYH/kegg_overlap.git
+cd kegg_overlap
 pip install -e .
 ```
 
 ## Usage
-You can run the full pipeline from Python:
+
+You can run the full analysis pipeline with a single command, or use individual modules for specific tasks.
+
+### Quick Start
+To run the complete analysis and generate all reports:
 
 ```python
 import kegg_overlap
 
-# Run the analysis pipeline
 kegg_overlap.run_pipeline()
 ```
 
-This will generate the following files in your current working directory:
-- `KEGG_crosstalk.csv`: Pairwise pathway overlaps.
-- `gene_rank.csv`: Genes ranked by number of pathways.
-- `top_genes_common_pathways.txt`: Common pathways for the top genes.
-- `top_genes_venn.png`: Venn diagram of pathway overlaps.
+This will generate:
+*   `KEGG_crosstalk.csv`: Pairwise pathway overlaps.
+*   `gene_rank.csv`: Genes ranked by pathway frequency.
+*   `top_genes_venn.png`: Venn diagram of top genes.
 
-## Modules
-- `kegg_overlap.downloader`: Functions to download data from KEGG API.
-- `kegg_overlap.parser`: Functions to parse raw data.
-- `kegg_overlap.analysis`: Core analysis logic.
-- `kegg_overlap.plotting`: Plotting functions.
-
-## Step-by-Step Usage
-If you want to run specific parts of the analysis (e.g., just get the gene ranking or just the crosstalk), you can import the modules individually:
+### Advanced Usage
+For more granular control, import specific modules:
 
 ```python
 import kegg_overlap.downloader as downloader
-import kegg_overlap.parser as parser
 import kegg_overlap.analysis as analysis
+import kegg_overlap.parser as parser
 
-# 1. Get the data
-pathways_raw, gene2pw_raw, geneinfo_raw = downloader.download_kegg_data()
-pathways = parser.parse_pathways(pathways_raw)
-gene2pw = parser.parse_gene2pw(gene2pw_raw)
-geneinfo = parser.parse_geneinfo(geneinfo_raw)
+# 1. Download and Parse
+raw_data = downloader.download_kegg_data()
+pathways = parser.parse_pathways(raw_data[0])
+gene2pw = parser.parse_gene2pw(raw_data[1])
+geneinfo = parser.parse_geneinfo(raw_data[2])
 
-# 2. Create the master mapping
+# 2. Analyze
 mapping = analysis.create_mapping(gene2pw, geneinfo, pathways)
-
-# 3. Run specific analysis
-# Example: Just get gene rankings
 gene_rank = analysis.rank_genes(mapping)
-print(gene_rank.head())
 
-# Example: Just compute crosstalk
-crosstalk = analysis.compute_crosstalk(mapping, pathways)
-print(crosstalk.head())
+print(gene_rank.head())
 ```
+
+## Documentation
+For more details on the implementation, please refer to the source code in the `kegg_overlap` directory.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
