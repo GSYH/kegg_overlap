@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.6%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![Documentation](https://img.shields.io/badge/docs-gh--pages-blue)](https://GSYH.github.io/kegg_overlap/)
 
 **KEGG Overlap** is a Python package for analyzing pathway overlaps using data from the KEGG database. It automates the retrieval of pathway and gene information, computes the "crosstalk" (gene overlap) between pathways, and ranks genes based on their pathway connectivity.
 
@@ -67,7 +68,9 @@ print(gene_rank.head())
 ```
 
 ## Documentation
-For more details on the implementation, please refer to the source code in the `kegg_overlap` directory.
+Full documentation is available at: **[https://GSYH.github.io/kegg_overlap/](https://GSYH.github.io/kegg_overlap/)**
+
+For details on the implementation, you can also refer to the source code in the `kegg_overlap` directory.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
