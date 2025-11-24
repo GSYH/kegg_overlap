@@ -80,3 +80,4 @@ This package utilizes data from the **[KEGG API](http://rest.kegg.jp/)**. We ack
 Specific data sources used in this package:
 *   **KEGG PATHWAY Database**: [https://www.genome.jp/kegg/pathway.html](https://www.genome.jp/kegg/pathway.html)
 *   **Human Pathway List (API)**: [http://rest.kegg.jp/list/pathway/hsa](http://rest.kegg.jp/list/pathway/hsa)
+*   **Gene to Pathway Mapping (API)**: [http://rest.kegg.jp/link/pathway/hsa](http://rest.kegg.jp/link/pathway/hsa)

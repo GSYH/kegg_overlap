@@ -9,5 +9,6 @@ This package relies on the **[KEGG API](http://rest.kegg.jp/)** for retrieving b
 *   **KEGG: Kyoto Encyclopedia of Genes and Genomes**
 *   **KEGG PATHWAY Database**: [https://www.genome.jp/kegg/pathway.html](https://www.genome.jp/kegg/pathway.html)
 *   **Human Pathway List (API)**: [http://rest.kegg.jp/list/pathway/hsa](http://rest.kegg.jp/list/pathway/hsa)
+*   **Gene to Pathway Mapping (API)**: [http://rest.kegg.jp/link/pathway/hsa](http://rest.kegg.jp/link/pathway/hsa)
 
 We thank the Kanehisa Laboratories for maintaining this valuable resource for the scientific community.
