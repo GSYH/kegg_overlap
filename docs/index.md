@@ -1,5 +1,12 @@
 # Welcome to KEGG Overlap
 
+| | |
+|---|---|
+| **Author:** | Shuoyuan Gao |
+| **Date:** | Nov 24, 2025 |
+| **Version:** | 0.1.0 |
+| **Python:** | 3.6+ |
+
 **KEGG Overlap** is a Python package for analyzing pathway overlaps using data from the KEGG database.
 
 ## Features

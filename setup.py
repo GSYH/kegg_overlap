@@ -11,6 +11,6 @@ setup(
         "matplotlib-venn",
         # "venn" # Optional, as per notebook logic
     ],
-    author="User",
+    author="Shuoyuan Gao",
     description="A package for KEGG pathway overlap analysis",
 )
