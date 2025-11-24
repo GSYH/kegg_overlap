@@ -6,6 +6,11 @@
 
 **KEGG Overlap** is a Python package for analyzing pathway overlaps using data from the KEGG database. It automates the retrieval of pathway and gene information, computes the "crosstalk" (gene overlap) between pathways, and ranks genes based on their pathway connectivity.
 
+> [!NOTE]
+> **Scope & Limitations**:
+> *   **Organism**: This package is currently configured to analyze **Human (hsa)** data only.
+> *   **Analysis Type**: It performs a **global analysis** of the entire KEGG pathway database to find intrinsic overlaps between pathways. It does not currently support enrichment analysis for user-provided gene lists.
+
 This tool is designed for bioinformaticians and researchers who need to programmatically explore the relationships between biological pathways.
 
 ## Installation
