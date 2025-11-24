@@ -7,6 +7,7 @@ We would like to express our sincere gratitude to **Professor Cristina Mitrea** 
 This package relies on the **[KEGG API](http://rest.kegg.jp/)** for retrieving biological pathway and gene information.
 
 *   **KEGG: Kyoto Encyclopedia of Genes and Genomes**
-*   API Endpoint: `http://rest.kegg.jp/`
+*   **KEGG PATHWAY Database**: [https://www.genome.jp/kegg/pathway.html](https://www.genome.jp/kegg/pathway.html)
+*   **Human Pathway List (API)**: [http://rest.kegg.jp/list/pathway/hsa](http://rest.kegg.jp/list/pathway/hsa)
 
 We thank the Kanehisa Laboratories for maintaining this valuable resource for the scientific community.

@@ -76,3 +76,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 We would like to thank **Professor Cristina Mitrea** for her guidance in the **BIOINF 575: Programming Laboratory in Bioinformatics** course at the University of Michigan.
 
 This package utilizes data from the **[KEGG API](http://rest.kegg.jp/)**. We acknowledge and thank the Kyoto Encyclopedia of Genes and Genomes for providing this resource.
+
+Specific data sources used in this package:
+*   **KEGG PATHWAY Database**: [https://www.genome.jp/kegg/pathway.html](https://www.genome.jp/kegg/pathway.html)
+*   **Human Pathway List (API)**: [http://rest.kegg.jp/list/pathway/hsa](http://rest.kegg.jp/list/pathway/hsa)
