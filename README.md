@@ -71,3 +71,8 @@ For more details on the implementation, please refer to the source code in the `
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+We would like to thank **Professor Cristina Mitrea** for her guidance in the **BIOINF 575: Programming Laboratory in Bioinformatics** course at the University of Michigan.
+
+This package utilizes data from the **[KEGG API](http://rest.kegg.jp/)**. We acknowledge and thank the Kyoto Encyclopedia of Genes and Genomes for providing this resource.
