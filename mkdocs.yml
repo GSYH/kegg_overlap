@@ -1,0 +1,10 @@
+site_name: KEGG Overlap Documentation
+site_description: Documentation for the KEGG Overlap Python package.
+site_author: User
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - API Reference: api.md
+  - Acknowledgements: acknowledgements.md
