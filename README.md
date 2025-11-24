@@ -2,7 +2,15 @@
 This package performs KEGG pathway overlap analysis, converting the logic from `kegg_overlap.ipynb` into a reusable Python module.
 
 ## Installation
-You can install the package in editable mode:
+
+### Option 1: Install from GitHub (Recommended for others)
+You can install the package directly from GitHub without downloading the files manually:
+```bash
+pip install git+https://github.com/GSYH/kegg_overlap.git
+```
+
+### Option 2: Install Locally (For development)
+If you have downloaded the source code, you can install it in editable mode:
 ```bash
 cd kegg_package
 pip install -e .
