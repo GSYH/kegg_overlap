@@ -37,3 +37,30 @@ This will generate the following files in your current working directory:
 - `kegg_overlap.parser`: Functions to parse raw data.
 - `kegg_overlap.analysis`: Core analysis logic.
 - `kegg_overlap.plotting`: Plotting functions.
+
+## Step-by-Step Usage
+If you want to run specific parts of the analysis (e.g., just get the gene ranking or just the crosstalk), you can import the modules individually:
+
+```python
+import kegg_overlap.downloader as downloader
+import kegg_overlap.parser as parser
+import kegg_overlap.analysis as analysis
+
+# 1. Get the data
+pathways_raw, gene2pw_raw, geneinfo_raw = downloader.download_kegg_data()
+pathways = parser.parse_pathways(pathways_raw)
+gene2pw = parser.parse_gene2pw(gene2pw_raw)
+geneinfo = parser.parse_geneinfo(geneinfo_raw)
+
+# 2. Create the master mapping
+mapping = analysis.create_mapping(gene2pw, geneinfo, pathways)
+
+# 3. Run specific analysis
+# Example: Just get gene rankings
+gene_rank = analysis.rank_genes(mapping)
+print(gene_rank.head())
+
+# Example: Just compute crosstalk
+crosstalk = analysis.compute_crosstalk(mapping, pathways)
+print(crosstalk.head())
+```
