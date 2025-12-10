@@ -4,6 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 [![Documentation](https://img.shields.io/badge/docs-gh--pages-blue)](https://GSYH.github.io/kegg_overlap/)
 
+**kegg_overlap.ipynb** is a file for the extra credit answer. The rest are implementing the package for question 7.
+
 **KEGG Overlap** is a Python package for analyzing pathway overlaps using data from the KEGG database. It automates the retrieval of pathway and gene information, computes the "crosstalk" (gene overlap) between pathways, and ranks genes based on their pathway connectivity.
 
 > [!NOTE]
