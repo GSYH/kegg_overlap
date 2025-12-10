@@ -8,8 +8,9 @@ def create_mapping(gene2pw, geneinfo, pathways):
     mapping = (
         gene2pw.merge(geneinfo, on="GENE_ID", how="inner")
                .merge(pathways, on="PATHWAY_ID", how="inner")
-               .drop_duplicates(subset=["PATHWAY_ID", "GENE_SYMBOL"])
+               .drop_duplicates(subset=["PATHWAY_ID", "GENE_ID"])
     )
+    mapping["GENE_SYMBOL"] = mapping["GENE_SYMBOL"].str.upper()
     return mapping
 
 def compute_crosstalk(mapping, pathways):

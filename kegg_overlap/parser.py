@@ -20,8 +20,8 @@ def parse_gene2pw(gene2pw_raw):
 def extract_symbol(ginfo):
     """Extracts gene symbol from gene info string."""
     # "RNR1, MTRNR1, MT-RNR1; s-rRNA" -> "RNR1"
-    if not isinstance(ginfo, str):
-        return ""
+    if pd.isna(ginfo) or ginfo == "":
+        return None
     symbol = ginfo.split(",")[0].split(";")[0].strip()
     return symbol
 
@@ -40,4 +40,5 @@ def parse_geneinfo(geneinfo_raw):
     )
     
     geneinfo["GENE_SYMBOL"] = geneinfo["GENE_INFO"].apply(extract_symbol)
+    geneinfo = geneinfo.dropna(subset=["GENE_SYMBOL"])
     return geneinfo[["GENE_ID", "GENE_SYMBOL"]]
